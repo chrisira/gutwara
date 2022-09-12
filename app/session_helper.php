@@ -1,0 +1,27 @@
+<?php
+
+	if(session_status() !== PHP_SESSION_ACTIVE){
+		session_start();
+	}
+
+	function isLoggedIn(){
+
+
+
+	    if(isset($_SESSION['userPhone'])){
+	    	return $credentials = array($_SESSION['userPhone'], $_SESSION['user_password'], $_SESSION['type'], 'userId'=>$_SESSION['userId'], 'userPassword' => $_SESSION['user_password'], 'userType' => $_SESSION['userType'], 'loggedIn' => $_SESSION['loggedIn']??false);
+	    } else {
+	    	return null;
+
+	    }
+		
+	}
+
+	function lockMe(){
+		if($credentials = isLoggedIn()){
+			$_SESSION['user_password'] = false;
+		}
+	}
+
+
+	?>

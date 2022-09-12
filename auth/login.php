@@ -98,21 +98,17 @@
         </div>
 
         <div class="card card-body">
-
-
-            
-
             
 
             <div class="page-separator">
                 <div class="page-separator__text">Injira</div>
             </div>
 
-            <form action="" validate>
+            <form action="../submissions.php" method="post" validate>
                 <div class="form-group">
                     <label class="text-label" for="email_2">Telephone:</label>
                     <div class="input-group input-group-merge">
-                        <input id="email_2" type="text" required="" class="form-control form-control-prepended" placeholder="Injiza numero ya telephone" required>
+                        <input id="email_2" type="text" name="phone" required="" class="form-control form-control-prepended" placeholder="Injiza numero ya telephone" required>
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-phone"></span>
@@ -123,7 +119,7 @@
                 <div class="form-group">
                     <label class="text-label" for="password_2">Ijambo banga:</label>
                     <div class="input-group input-group-merge">
-                        <input id="password_2" type="password" required="" class="form-control form-control-prepended" placeholder="Enter your password" required>
+                        <input id="password_2" type="password" name="password" required="" class="form-control form-control-prepended" placeholder="Enter your password" required>
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-key"></span>
@@ -132,7 +128,7 @@
                     </div>
                 </div>
                 <div class="form-group mb-1">
-                    <button class="btn btn-block btn-primary" type="submit">Injira</button>
+                    <button class="btn btn-block btn-primary" name="login" type="submit">Injira</button>
                 </div>
                 <div class="form-group text-center">
                     <div class="custom-control custom-checkbox">
@@ -141,7 +137,7 @@
                 </div>
                 <div class="form-group text-center mb-0">
                     
-                    Nta konti mufite? <a class="text-underline" href="register.html">Yifungure</a>
+                    Nta konti mufite? <a class="text-underline" href="register.php">Yifungure</a>
                 </div>
             </form>
         </div>

@@ -2,12 +2,12 @@
 <html lang="en" dir="ltr">
 
 
-<!-- Mirrored from lema.frontted.com/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Jun 2022 11:32:41 GMT -->
+<!-- Mirrored from lema.frontted.com/student-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Jun 2022 11:33:12 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Iyandikishe</title>
+    <title>Dashboard</title>
 
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
@@ -77,76 +77,70 @@
 
 </head>
 
-<body class="layout-login-centered-boxed">
+<body class="layout-default">
+
+
+<!-- Header Layout -->
+<div class="mdk-header-layout js-mdk-header-layout">
+
+<!-- Header -->
+
+<?php include("header.php"); 
+
+?>
+<!-- // END Header -->
+
+<!-- Header Layout Content -->
+<div class="mdk-header-layout__content">
+
+<div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
+    <div class="mdk-drawer-layout__content page">
 
 
 
+        <!-- <div class="container-fluid page__heading-container">
+            <div class="page__heading d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
+                <h1 class="m-lg-0">Admin Dashboard</h1>
+                <div>
+                    <a href="student-edit-account.html" class="btn btn-light ml-3"><i class="material-icons">edit</i> Edit</a>
+                    <a href="student-profile.html" class="btn btn-success ml-1">View Profile <i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div> -->
 
 
-    <div class="layout-login-centered-boxed__form">
-        <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-4 navbar-light">
-            <a href="index.html" class="text-center text-light-gray mb-4">
+    </div>
+    <!-- // END drawer-layout__content -->
+
+    <div class="mdk-drawer  js-mdk-drawer" id="default-drawer" data-align="start">
+        <div class="mdk-drawer__content">
+            <div class="sidebar sidebar-light sidebar-left bg-white" data-perfect-scrollbar>
+
+
+                
+            <div class="sidebar-block p-0">
+                    
+            <?php include("sidebar.php"); 
+
+            ?>
+
 
                 
 
-            </a>
-        </div>
-        <div class="card card-body">
-            
-
-            <div class="page-separator">
-                <div class="page-separator__text">Iyandikishe</div>
             </div>
-
-            <form action="../submissions.php" method="post" >
-                <div class="form-group">
-                    <label class="text-label" for="name_2">Amazina:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="name_2" type="text" name="names" required="required" class="form-control form-control-prepended" placeholder="Injiza Izina" required>
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="far fa-user"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="text-label" for="email_2">Telephone:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="email_2" type="number" name="phone" required="" class="form-control form-control-prepended" placeholder="shyiramo telephone" required>
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="fa fa-phone"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="text-label" for="password_2">ijambo banga:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="password_2" type="password" name="password" required="" class="form-control form-control-prepended" placeholder="Enter your password" required>
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="material-icons">lock</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mb-2 text-center">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" checked="" class="custom-control-input" id="terms" />
-                        <label class="custom-control-label" for="terms">Nemeye <a href="#">Amategeko n'amabwiriza</a></label>
-                    </div>
-                </div>
-                <div class="form-group text-center">
-                    <button class="btn btn-success btn-lg btn-block mb-3" type="submit" name="register">Fungura Konti</button>
-                </div>
-                <div class="text-center">
-                    <span>Mufite Konti?</span> <a class="text-body text-underline" href="login.php"> Injira</a>
-                </div>
-            </form>
         </div>
     </div>
+</div>
+<!-- // END drawer-layout -->
+
+</div>
+<!-- // END header-layout__content -->
+
+</div>
+<!-- // END header-layout -->
+
+
+
 
 
     <!-- jQuery -->
@@ -185,5 +179,5 @@
 </body>
 
 
-<!-- Mirrored from lema.frontted.com/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Jun 2022 11:32:41 GMT -->
+
 </html>

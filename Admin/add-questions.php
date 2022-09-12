@@ -1,16 +1,26 @@
+<?php
 
+require_once("../app/bootstrap.php");
 
+$credentials = isLoggedIn();
+if(($credentials == null && $credentials[0] == null) || $credentials[0] != '' && $credentials[1] == '' || $credentials[2] != "student"){
+  redirect($credentials[0],$credentials[1],$credentials[2]);
+}
+$user_id = $credentials["userId"];
 
+$current_user= $db->GetRow("SELECT * FROM users WHERE users.id = ?",["$user_id"]);
+$questions = $db->GetRow("SELECT * FROM questions");
+$total= $db->Getsum("SELECT COUNT(question_number) FROM questions");
+$next = $total+1;
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-
-<!-- Mirrored from lema.frontted.com/student-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Jun 2022 11:33:12 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dashboard</title>
+    <title>Add Question</title>
 
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
@@ -73,11 +83,6 @@
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=257843818545228&amp;ev=PageView&amp;noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
-
-
-
-
-
 </head>
 
 <body class="layout-default">
@@ -103,21 +108,59 @@
 
         <div class="container-fluid page__heading-container">
             <div class="page__heading d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
-                <h1 class="m-lg-0">Student Dashboard</h1>
-                <div>
-                    <a href="student-edit-account.html" class="btn btn-light ml-3"><i class="material-icons">edit</i> Edit</a>
-                    <a href="student-profile.html" class="btn btn-success ml-1">View Profile <i class="material-icons">account_circle</i></a>
-                </div>
-            </div>
+                <h4 class="m-lg-0">Add Question</h4>
+              
+                
         </div>
-
-
-
-
-
-    
-
     </div>
+
+
+
+<div class="container-fluid page__container">
+    <div class="row">
+        <div class="col-md-8">
+ 
+            <div class="mb-3">
+            <form action="../submissions.php" method="post">
+            
+            <label for="exampleFormControlTextarea1" class="form-label btn btn-primary">Add Question</label> <input type="number" name="question_number" class="btn btn-success mb-2 ml-2" value="<?php echo $next ?>">
+   
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="question_text" rows="3" placeholder = "Enter question" required></textarea>
+            </div>
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Choice 1</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1"name="choice1"  placeholder="Enter Choice 1" required>
+            </div>
+
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Choice 2</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="choice2" placeholder="Enter Choice 2" required>
+            </div>
+
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Choice 3</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="choice3" placeholder="Enter Choice 3" required>
+            </div>
+
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Choice 4</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="choice4" placeholder="Enter Choice 4" required>
+            </div>
+    
+       </div>
+        <div class="col-md-4">
+        <div class="mb-3">
+            
+            <label for="exampleFormControlInput1" class="form-label">Correct Answer</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" name="correct_choice" placeholder="Enter Correct number" required>
+            </div>
+            
+            </div>
+     </div>
+     <form>
+     <button class="btn btn-primary" type="submit" name="save" >Save</button>
+  </div>
+</div>
     <!-- // END drawer-layout__content -->
 
     <div class="mdk-drawer  js-mdk-drawer" id="default-drawer" data-align="start">
@@ -180,12 +223,8 @@
 
     <!-- App Settings (safe to remove) -->
     <script src="../assets/js/app-settings.js"></script>
-
-
-
-
 </body>
 
 
-<!-- Mirrored from lema.frontted.com/student-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Jun 2022 11:33:12 GMT -->
+
 </html>

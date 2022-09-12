@@ -1,0 +1,14 @@
+CREATE DATABASE db_gutwara;
+use db_gutwara;
+
+CREATE TABLE users
+(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    names VARCHAR(100) NOT NULL,
+    phone VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(100) NOT NULL DEFAULT "student",
+    status VARCHAR(100) NOT NULL DEFAULT "active",
+    createdAt TIMESTAMP DEFAULT NOW(),
+    updatedAt TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
+);
