@@ -199,6 +199,7 @@ require_once('../app/bootstrap.php');
         
         $random = (randomGen(0,$total,1)); //generates 20 unique random numbers
       $n= $random[0];
+      
 
        ?>
 
